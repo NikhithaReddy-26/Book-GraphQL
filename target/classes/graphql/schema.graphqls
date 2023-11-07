@@ -1,0 +1,23 @@
+type Query {
+    allBooks: [Book]
+    getBook(id: ID!): Book
+}
+
+type Mutation {
+    createBook(input: BookInput!): Book
+    updateBook(id: ID!, input: BookInput!): Book
+    deleteBook(id: ID!): String
+}
+
+type Book {
+    id: ID!
+    bookName: String
+    authorName: String
+    authorId: Int
+}
+
+input BookInput {
+    bookName: String
+    authorName: String
+    authorId: Int
+}
